@@ -1,6 +1,6 @@
 import { standardSchemaValidator, useForm } from '@tanstack/react-form';
 import { Adapter, Contact, updateSchema } from '../ValidationSchemas/contactSchema';
-import FormField from '../../AddContactForm/partials/FormField';
+import FormField from '../../../components/FormField';
 
 type ContactEditFormProps = {
   contact: { id: number; name: string; username: string; email: string; phone: string; website: string };

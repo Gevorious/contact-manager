@@ -1,7 +1,7 @@
 import { standardSchemaValidator, useForm } from '@tanstack/react-form';
 import { Adapter, Contact, contactSchema } from './ValidationSchemas/contactSchema';
 import { useCreateContact } from '../../hooks/useContacts';
-import FormField from './partials/FormField';
+import FormField from '../../components/FormField';
 import { useAlert } from '../../contexts/AlertContext';
 
  const CreateContact = () => {

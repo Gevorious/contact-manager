@@ -1,6 +1,6 @@
 import { FieldApi } from '@tanstack/react-form';
 import FieldInfo from './FieldInfo';
-import { Contact } from '../ValidationSchemas/contactSchema';
+import { Contact } from '../pages/AddContactForm/ValidationSchemas/contactSchema';
 
 type FormFieldProps = {
   label: string;
