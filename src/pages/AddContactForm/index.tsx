@@ -10,7 +10,8 @@ import { useAlert } from '../../contexts/AlertContext';
 
   const submitContact = (contact: Contact) => {
     const { street, suite, city, ...rest } = contact;
-    const data = { ...rest, address: {street, suite, city}};
+    const hasAddress = street || suite || city;
+    const data = { ...rest, ...(hasAddress && {address: {street, suite, city}})};
 
 
     createContact.mutate(data, {
