@@ -6,7 +6,7 @@ export const updateSchema = z.object({
   username: z.string().min(3, 'username must be at least 3 characters'),
   email: z.string().email('must be a valid email'),
   phone: z.string().min(10, 'phone number must be at least 10 characters'),
-  website: z.string().url().optional(),
+  website: z.string().url('must be a valid URL').or(z.literal('')).optional(),
 });
 
 export type Contact = z.infer<typeof updateSchema>;
