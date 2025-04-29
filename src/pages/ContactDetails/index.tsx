@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "@tanstack/react-router";
 import { useContact, useDeleteContact, useUpdateContact } from '../../hooks/useContacts';
-import ContactInfoCard from '../../components/ContactInfoCard';
+import ContactInfoCard from './partials/ContactInfoCard';
 import ContactEditForm from './partials/ContactEditForm';
 import { useState } from 'react';
 import ConfirmModal from "../../components/ConfirmModal";
@@ -74,8 +74,7 @@ if (isError || !contact) {
         </div>
       </div>
       <div className="space-y-4 max-w-lg bg-white shadow-lg rounded-lg p-6 mb-6">
-       {!isEditing && <ContactInfoCard contact={contact} />}
-       {isEditing && <ContactEditForm contact={contact} onSave={onSave} />}
+      {!isEditing ? <ContactInfoCard contact={contact} /> : <ContactEditForm contact={contact} onSave={onSave} />}
       <div className="flex justify-end space-x-4 mt-6">
         <button
           onClick={() => setIsEditing(!isEditing)}

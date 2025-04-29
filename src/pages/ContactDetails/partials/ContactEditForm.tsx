@@ -3,8 +3,8 @@ import { Adapter, Contact, updateSchema } from '../ValidationSchemas/contactSche
 import FormField from '../../../components/FormField';
 
 type ContactEditFormProps = {
-  contact: { id: number; name: string; username: string; email: string; phone: string; website: string };
-  onSave: (updatedContact: any) => void;
+  contact: Contact;
+  onSave: (updatedContact: Contact) => void;
 };
 
 const ContactEditForm = ({ contact, onSave }: ContactEditFormProps) => {

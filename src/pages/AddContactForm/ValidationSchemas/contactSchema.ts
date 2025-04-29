@@ -9,7 +9,7 @@ export const contactSchema = z.object({
   street: z.string().optional(),
   suite: z.string().optional(),
   city: z.string().optional(),
-  website: z.string().url().optional(),
+  website: z.string().url('Must be a valid URL').or(z.literal('')).optional(),
 });
 
 export type Contact = z.infer<typeof contactSchema>;
