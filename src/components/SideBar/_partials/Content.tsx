@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState } from 'react'
+import { useContacts } from '../../../hooks/useContacts';
 import { Link } from '@tanstack/react-router';
-import { useContacts } from '../hooks/useContacts';
 
-const Sidebar = () => {
-  const { data: contacts = [], isLoading, isError } = useContacts();
-  const [searchTerm, setSearchTerm] = useState('');
+const Content = ({onLinkClick}: { onLinkClick?: () => void }) => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const { data: contacts = [], isLoading, isError } = useContacts();
+  
 
   if (isLoading) return <div className="p-4">Loading contacts...</div>;
   if (isError) return <div className="p-4 text-500">Error loading contacts</div>;
@@ -14,8 +15,7 @@ const Sidebar = () => {
   );
 
   return (
-    <div className="flex">
-      <div className="w-64 bg-gray-800 text-white p-4 space-y-6">
+     <div className="w-64 h-full bg-gray-800 text-white p-4 space-y-6">
         <div>
           <input
             type="text"
@@ -30,7 +30,11 @@ const Sidebar = () => {
             <li
               key={contact.id}
             >
-              <Link to={`/contacts/${contact.id}`} className="p-2 block cursor-pointer hover:bg-gray-600 rounded-md">{contact.name}</Link>
+              <Link
+                to={`/contacts/${contact.id}`} className="p-2 block cursor-pointer hover:bg-gray-600 rounded-md"
+                onClick={onLinkClick}>
+                    {contact.name}
+              </Link>
             </li>
           )}
         </ul>
@@ -39,13 +43,13 @@ const Sidebar = () => {
           <Link
             to="/contacts/new"
             className="block w-full py-2 px-4 text-center bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-all ease-in-out duration-300"
+            onClick={onLinkClick}
           >
             Add New Contact
           </Link>
         </div>
       </div>
-    </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Content

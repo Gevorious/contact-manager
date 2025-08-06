@@ -1,5 +1,5 @@
 import { Outlet } from '@tanstack/react-router';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/SideBar';
 import { AlertProvider, useAlert } from '../contexts/AlertContext';
 import AlertBanner from '../components/AlertBanner';
 
@@ -26,9 +26,9 @@ const OutletWrapper = () => {
 const SidebarLayout = () => {
   return (
     <div className="flex ">
-      <div className="w-64 bg-gray-800 text-white p-4 space-y-6">
+      {/* <div className="text-white p-4 space-y-6"> */}
         <Sidebar />
-      </div>
+      {/* </div> */}
       <div className="flex-1 bg-gray-100">
           <AlertProvider>
             <OutletWrapper />

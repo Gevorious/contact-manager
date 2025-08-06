@@ -61,7 +61,7 @@ if (isError || !contact) {
   const imgURL = `https://robohash.org/${contact.id}?set=set2&size=300x300`;
 
   return (
-    <div className="flex-1 p-6">
+    <div className="flex-1 p-0 md:p-6">
       <div className="flex items-center mb-4">
         <img
           src={imgURL}
