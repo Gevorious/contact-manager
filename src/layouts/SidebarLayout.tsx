@@ -26,9 +26,7 @@ const OutletWrapper = () => {
 const SidebarLayout = () => {
   return (
     <div className="flex ">
-      {/* <div className="text-white p-4 space-y-6"> */}
-        <Sidebar />
-      {/* </div> */}
+      <Sidebar />
       <div className="flex-1 bg-gray-100">
           <AlertProvider>
             <OutletWrapper />

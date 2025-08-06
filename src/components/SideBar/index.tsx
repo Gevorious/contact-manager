@@ -8,9 +8,9 @@ const Sidebar = () => {
   return (
     <>
       <div className="flex">
-        <div className="hidden md:block">
+          <div className="w-64 hidden md:block h-full bg-gray-800 text-white p-4 space-y-6">
           <Content />
-        </div>
+          </div>
         <div
           className={`
             fixed top-0 left-0 h-full bg-gray-800 text-white z-50 transform transition-transform duration-300 ease-in-out
@@ -24,7 +24,9 @@ const Sidebar = () => {
                 {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
             </button>
           </div>
-          <Content onLinkClick={() => setIsOpen(false)} />
+          <div className="w-64 h-full bg-gray-800 text-white p-4 space-y-6">
+            <Content onLinkClick={() => setIsOpen(false)} />
+          </div>
         </div>
       </div>
     </>

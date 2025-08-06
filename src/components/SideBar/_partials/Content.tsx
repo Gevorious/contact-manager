@@ -15,7 +15,7 @@ const Content = ({onLinkClick}: { onLinkClick?: () => void }) => {
   );
 
   return (
-     <div className="w-64 h-full bg-gray-800 text-white p-4 space-y-6">
+     <>
         <div>
           <input
             type="text"
@@ -48,7 +48,7 @@ const Content = ({onLinkClick}: { onLinkClick?: () => void }) => {
             Add New Contact
           </Link>
         </div>
-      </div>
+      </>
   )
 }
 
